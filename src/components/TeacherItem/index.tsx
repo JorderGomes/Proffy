@@ -1,31 +1,56 @@
 import React from 'react';
 import  './styles.css';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
-function TeacherItem(){
+export interface Teacher{
+    id: number;
+    avatar: string;
+    bio: string;
+    cost: number;
+    name: string;
+    subject: string;
+    whatsapp: string;
+}
+
+interface TeacherItemProps {
+    teacher: Teacher;
+}
+
+const TeacherItem:React.FC<TeacherItemProps> = ({teacher}) =>{
+
+    function createNewConnetion (){
+        api.post('connections', {
+            user_id: teacher.id
+        })
+    }
+
     return(
         <article className="teacher-item">
             <header>
-                <img src="https://avatars0.githubusercontent.com/u/21248532?s=460&u=01ec1df6f366e4186c774fb8f0053aa57232f8ad&v=4" alt="Usuaria"/>
+                <img src={teacher.avatar} alt={teacher.name} />
                 <div>
-                    <strong>Fernanda Albre</strong>
-                    <span>Design</span>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
             <p>
-                Ignis divine eleison
-                <br/><br/>
-                Kire set te kloloti na vitae. Set etnub holonoror wasidurare
+                {teacher.bio}
             </p>
             <footer>
                 <p>
                     Preço/hora 
-                    <strong>R$ 20,00</strong>
+                    <strong>R$ {teacher.cost},00</strong>
                 </p>
-                <button type="button">
+                <a 
+                    // eslint-disable-next-line
+                    target="_blank"
+                    onClick={createNewConnetion} 
+                    href={`https://wa.me/${teacher.whatsapp}`}
+                >
                     <img src={whatsappIcon} alt="whatsapp"/>
                     Entrar em contato
-                </button>
+                </a>
             </footer>
         </article>
     );
