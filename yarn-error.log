@@ -1,5 +1,5 @@
 Arguments: 
-  /home/jorder/.config/nvm/versions/node/v12.18.2/bin/node /usr/share/yarn/bin/yarn.js add @react-navigation/native
+  /home/jorder/.config/nvm/versions/node/v12.18.2/bin/node /usr/share/yarn/bin/yarn.js add axios
 
 PATH: 
   /home/jorder/.local/bin:/home/jorder/.config/nvm/versions/node/v12.18.2/bin:/home/jorder/anaconda3/bin:/home/jorder/anaconda3/condabin:/home/jorder/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: connect ENETUNREACH 2606:4700::6810:1623:443 - Local (:::0)
+  Error: connect ENETUNREACH 2606:4700::6810:1b23:443 - Local (:::0)
       at internalConnect (net.js:923:16)
       at defaultTriggerAsyncIdScope (internal/async_hooks.js:323:12)
       at emitLookup (net.js:1063:9)
@@ -37,12 +37,20 @@ npm manifest:
     "dependencies": {
       "@expo-google-fonts/archivo": "^0.1.0",
       "@expo-google-fonts/poppins": "^0.1.0",
+      "@react-native-community/masked-view": "0.1.10",
+      "@react-navigation/bottom-tabs": "^5.8.0",
+      "@react-navigation/native": "^5.7.3",
+      "@react-navigation/stack": "^5.9.0",
       "expo": "~38.0.8",
       "expo-font": "~8.2.1",
       "expo-status-bar": "^1.0.2",
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+      "react-native-gesture-handler": "~1.6.0",
+      "react-native-reanimated": "~1.9.0",
+      "react-native-safe-area-context": "~3.0.7",
+      "react-native-screens": "~2.9.0",
       "react-native-web": "~0.11.7"
     },
     "devDependencies": {
